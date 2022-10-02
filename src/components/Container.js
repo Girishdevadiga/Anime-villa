@@ -10,7 +10,7 @@ export default function Container(props) {
     const [page, setpage] = useState(1)
     const [genre, setgenre] = useState("popular")
 
-    console.log(props.disbaleHandler);
+    //console.log(props.disbaleHandler);
     const clickHandler = (event) => {
         // console.log(event.target.value);
         let val = event.target.value;

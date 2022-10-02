@@ -1,0 +1,20 @@
+.main-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    background-color: #000;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+.heading{
+    color: #512375;
+    border-bottom: 1px solid rgb(37, 36, 36);
+}
+.anime-info{
+    color: #e9e70c;
+}
+

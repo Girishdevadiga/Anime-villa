@@ -7,7 +7,7 @@ export default function Search(props) {
 
   const clickHandler = ()=>{
     let val = document.querySelector("#search").value;
-    console.log("clicked");
+    //console.log("clicked");
     props.searchFun(val);
     setTimeout(() => {
       document.querySelector("#search").value="";

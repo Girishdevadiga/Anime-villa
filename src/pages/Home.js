@@ -20,13 +20,9 @@ export default function Home() {
     setload(true);
     setsearch(true);
     axios.get("https://gogoanime.herokuapp.com/popular")
-      .then(res => setData(res.data));
+      .then(res => setData(res.data))
+       .then(()=>setload(false));
       setsearch(false);
-      setTimeout(() => {
-        setload(false);
-      }, 1500);
-      
-
   }, [])
 
 
@@ -44,7 +40,7 @@ export default function Home() {
         .then(res => setData(res.data));
     }
     else {
-      console.log(page);
+    //  console.log(page);
       axios.get(`https://gogoanime.herokuapp.com/genre/${val}?page=${page}`)
         .then(res => setData(res.data));
     }
@@ -67,10 +63,10 @@ export default function Home() {
   }
 
 
-  console.log(data);
+  //console.log(data);
   return (
 
-    <div>
+    <div className='container'>
     
       <div className='row d-flex justify-content-between '>
         <div className="col-lg-6"> <Navbar /></div>
@@ -80,14 +76,15 @@ export default function Home() {
       <div className="card-container rounded ">
         <div className='row'>
         {load ? 
-          num.map(()=>{
-            return <CardSkeleton/>
+          num.map((ele)=>{
+            return <CardSkeleton key={ele}/>
           })
         :
 
 data.map((ele) => {
               return (<Card 
               key={ele.animeId} 
+              id={ele.animeId}
               title={ele.animeTitle} 
               url={ele.animeImg} 
               status={"status" in ele? ele.status.split(" ")[1]:null}

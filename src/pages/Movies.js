@@ -1,8 +1,11 @@
 import React from 'react'
-import axios from 'axios'
+import Navbar from '../components/Navbar'
 
 export default function Movies() {
   return (
-    <div>Movies</div>
+    <div>
+      <Navbar/>
+      <h1 style={{"color":"#fff"}}>Movies</h1>
+    </div>
   )
 }
