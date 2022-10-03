@@ -10,12 +10,10 @@ export default function VidSkeleton() {
 
     useEffect(()=>{
         setwidth(window.innerWidth)
-    })
+    },[])
     return (
 
         <div className='d-flex justify-content-center my-1'>
-
-
             <Skeleton
                 width={width>600?"50rem":"20rem"}
                 height={width>600? "35rem" : "13rem"}

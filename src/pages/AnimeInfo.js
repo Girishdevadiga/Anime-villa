@@ -15,10 +15,11 @@ export default function AnimeInfo() {
   const [info, setInfo] = useState(null);
   const [eps,setEps] = useState(null);
   const [load,setLoad] = useState(true);
+  const [comingSoon,setComingSoon]=useState(true);
 
   useEffect(() => {
     setLoad(true);
-    axios.get(`https://gogoanime.herokuapp.com/anime-details/${anime}`)
+    axios.get(process.env.REACT_APP_ANIME_DETIALS_API+`${anime}`)
       .then(res => setInfo(res.data))
       .then(()=>{
         setLoad(false)
@@ -30,6 +31,9 @@ export default function AnimeInfo() {
     setTimeout(() => {
       if (info!==null) {
         setEps(info.episodesList.reverse())
+        if(info.totalEpisodes>0){
+          setComingSoon(false);
+        }
       }
     }, 2000);
     
@@ -47,8 +51,8 @@ export default function AnimeInfo() {
         { load ? <InfoSkeleton/> :
           <InfoCard key={info.animeTitle} title={info.animeTitle} type={info.type }  date={info.releasedDate} genre={info.genres} otherNames={info.otherNames} summary={info.synopsis} url={info.animeImg} totalEps={info.totalEpisodes} status={info.status} />
         }
-
-        <h3 className='text-light m-3 bg-dark p-2 rounded'>Episode List</h3>
+        {!comingSoon && <h3 className='text-light m-3 bg-dark p-2 rounded'>Episode List</h3>}
+        
 
         <div className="container">
           <div className='row d.flex justify-content-start px-1'>

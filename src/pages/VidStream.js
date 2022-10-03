@@ -28,7 +28,7 @@ export default function VidStream() {
     useEffect(() => {
         setdata(null);
         setWidth(window.innerWidth)
-        axios.get(`https://gogoanime.herokuapp.com/anime-details/${anime}`)
+        axios.get(process.env.REACT_APP_ANIME_DETIALS_API+`${anime}`)
             .then(res => setdata(res.data));
     }, [anime])
 
@@ -42,7 +42,7 @@ export default function VidStream() {
 
     useEffect(() => {
         setcdn(null);
-        axios.get(`https://gogoanime.herokuapp.com/vidcdn/watch/${epsId}`)
+        axios.get(process.env.REACT_APP_VID_CDN_API+`${epsId}`)
             .then(res => setcdn(res.data.Referer))
     }, [epsId])
 

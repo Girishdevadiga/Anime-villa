@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     setload(true);
     setsearch(true);
-    axios.get("https://gogoanime.herokuapp.com/popular")
+    axios.get(process.env.REACT_APP_POPULAR_API)
       .then(res => setData(res.data))
        .then(()=>setload(false));
       setsearch(false);
@@ -31,17 +31,17 @@ export default function Home() {
     setload(true);
  
     if (val === "recent-release") {
-      axios.get(`https://gogoanime.herokuapp.com/${val}?page=${page}`)
+      axios.get(process.env.REACT_APP_ROOT_API+`${val}?page=${page}`)
         .then(res => setData(res.data));
     }
     else if(val==="popular"){
      
-      axios.get(`https://gogoanime.herokuapp.com/${val}?page=${page+1}`)
+      axios.get(process.env.REACT_APP_ROOT_API+`${val}?page=${page}`)
         .then(res => setData(res.data));
     }
     else {
     //  console.log(page);
-      axios.get(`https://gogoanime.herokuapp.com/genre/${val}?page=${page}`)
+      axios.get(process.env.REACT_APP_GENRE_API+`${val}?page=${page}`)
         .then(res => setData(res.data));
     }
     setsearch(false);
@@ -54,7 +54,7 @@ export default function Home() {
   const searchHandler = (val)=>{
     setsearch(true);
     setload(true)
-    axios.get(`https://gogoanime.herokuapp.com/search?keyw=${val}`)
+    axios.get(process.env.REACT_APP_SEARCH_API+`keyw=${val}`)
         .then(res => setData(res.data));
 
         setTimeout(() => {
