@@ -1,4 +1,5 @@
 import React from 'react'
+import { Zoom ,Grow } from '@mui/material'
 
 export default function InfoCard(props) {
  
@@ -6,9 +7,12 @@ export default function InfoCard(props) {
     <div className='main-info'>
       <div className='row p-2 pt-3 d.flex justify-content-center py-4 '>
         <div className="col-lg-4 col-md-4 col-sm-12 col-9 d-flex justify-content-center ">
+        <Zoom in={true}>
           <img className='rounded info-img' src={props.url} alt="Anime Poster" />
+          </Zoom>
         </div>
         <div className=" col-lg-6 col-md-6 col-sm-12 col-9">
+        <Grow in={true}>
           <div className="p-3">
             <p className='h5 text-light my-6 '>{props.title}</p>
             <p className='anime-info my-4 '><b>Type : </b> <span className='text-light h6 my-4 '>{props.type}</span></p>
@@ -21,7 +25,7 @@ export default function InfoCard(props) {
             <p className='anime-info h6 my-4 '><b>Status : </b> <span className='text-light'>{props.status}</span> </p>
             <p className='anime-info h6 my-4 '><b>Other names:</b> <span className='text-light'>{props.otherNames}</span>  </p>
           </div>
-
+          </Grow>
         </div>
 
       </div>

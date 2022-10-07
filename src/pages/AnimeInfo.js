@@ -41,7 +41,7 @@ export default function AnimeInfo() {
 
  
   return (
-    <div className='container ' >
+    <div className='container' >
       <Navbar />
       <div className=' info '>
         <div className="flex heading p-1 pt-3">
@@ -57,9 +57,9 @@ export default function AnimeInfo() {
         <div className="container">
           <div className='row d.flex justify-content-start px-1'>
           {eps!==null?
-          eps.map((ele)=>{
+          eps.map((ele,index)=>{
             return (
-              <EpsButon  key={ele.episodeId} id={ele.episodeId} title={anime} epsNum={ele.episodeNum} />
+              <EpsButon  key={ele.episodeId} id={ele.episodeId} title={anime} epsNum={ele.episodeNum} timeout={index*100}/>
             ) 
           }):
           <BtnSkeleton/>

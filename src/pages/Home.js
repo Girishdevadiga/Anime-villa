@@ -14,7 +14,6 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [searchBool, setsearch] = useState(false);
   const [load, setload] = useState(false);
- 
 
   useEffect(() => {
     setload(true);
@@ -23,6 +22,7 @@ export default function Home() {
       .then(res => setData(res.data))
        .then(()=>setload(false));
       setsearch(false);
+      
   }, [])
 
 
@@ -50,7 +50,6 @@ export default function Home() {
     }, 2000);
 
   }
-
   const searchHandler = (val)=>{
     setsearch(true);
     setload(true)
@@ -62,17 +61,28 @@ export default function Home() {
         }, 1500);
   }
 
-
   //console.log(data);
   return (
 
     <div className='container'>
-    
       <div className='row d-flex justify-content-between '>
-        <div className="col-lg-6"> <Navbar /></div>
-        <div className="col-lg-6 my-auto"> <Search searchFun={searchHandler} /></div>
+        <div className="col-lg-6 "> <Navbar /></div>
+        <div className="col-lg-6 my-auto "> <Search searchFun={searchHandler} /></div>
       </div>
       <Container genreClick={genreHandler} len={data.length} disbaleHandler={searchBool} />
+
+      {
+        searchBool &&
+          data.length===0 &&
+      <div className='my-2'>
+        <div className="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>No Anime found!</strong> The anime you're searching is not available or check your spelling. click here to 
+           <a href="/" className='text-primary'> Reload</a> the page
+        </div>
+      </div>
+
+    }
+
       <div className="card-container rounded ">
         <div className='row'>
         {load ? 

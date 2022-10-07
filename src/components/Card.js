@@ -1,14 +1,16 @@
 import React from 'react'
 import '../Styles/card.css'
 import { Link } from 'react-router-dom'
-
+import { Grow} from '@mui/material'
 
 export default function Card(props) {
   
   return (
 
+    <Grow in={true} timeout={800}>
+    
       <div className="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center my-2 ">
-        <Link to={"/anime/"+props.id} >
+        <Link to={"/anime/"+props.id} style={{"textDecoration":"none"}}>
         <div className="card anime-card text-center " style={{ "width": "16rem" }}>
           <img className="card-img-top card-img " src={props.url} alt="anime poster" />
           <div className="card-body">
@@ -27,7 +29,7 @@ export default function Card(props) {
         </div>
         </Link>
       </div>
-
+</Grow>
 
 
 
