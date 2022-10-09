@@ -1,0 +1,16 @@
+.suggestion {
+    position: absolute;
+    background-color:rgb(0, 0, 0);
+    opacity: .9 ;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+.list {
+    border: 1px solid white;
+    color: violet
+}
+li{
+ list-style: none;
+ margin-left: 1rem;
+}

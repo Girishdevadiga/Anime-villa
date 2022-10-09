@@ -105,9 +105,10 @@ data.map((ele) => {
               />)
             })
         }
-          
-            
-          
+    
+        </div>
+        <div className='d-flex justify-content-center'>
+          <p>&copy; Anime Villa 2022</p>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Movies from './pages/Movies'
 import Recent from './pages/Recent'
 import AnimeInfo from './pages/AnimeInfo';
+import About from './pages/About'
 import {
   BrowserRouter,
   Routes,
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={ <Home />} />
         <Route path='/movies' element={ <Movies />} />
         <Route path='/recent-release' element={ <Recent />} />
+        <Route path='/about' element={ <About />} />
         <Route path='/anime/:id' element={ <AnimeInfo />} />
         <Route path='/anime/:name/watch/:id' element={ <VidStream />} />
       </Routes>

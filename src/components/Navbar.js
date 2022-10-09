@@ -31,6 +31,7 @@ export default function Navbar() {
                             <Link onClick={PathHandler} className={path==="/"?"nav-link active":"nav-link "} aria-current="page" to="/">Home</Link>
                             <Link className={path==="/recent-release"?"nav-link active":"nav-link "} to="/recent-release">Recent Release</Link>
                             <Link className={path==="/movies"?"nav-link active":"nav-link "} to="/movies">Movies</Link>
+                            <Link className={path==="/about"?"nav-link active":"nav-link "} to="/about">About</Link>
                         </div>
                         </Slide>
                     </div>
