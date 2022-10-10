@@ -39,8 +39,8 @@ export default function Search(props) {
   }
 
   const keyHandler = (event)=>{
+    let val = document.querySelector("#search").value;
     if(event.key==="Enter"){
-      let val = document.querySelector("#search").value;
       //console.log("clicked");
       if(val.trim()!==""){
         props.searchFun(val);
@@ -50,6 +50,11 @@ export default function Search(props) {
       }
 
     }
+    if(event.key==="Backspace"){
+        if(val.trim()===""){
+          setanime([]);
+        }
+    }
   }
   const suggestionHandler = (event)=>{
     setdisbale(false);
@@ -57,6 +62,9 @@ export default function Search(props) {
     document.querySelector("#search").value=val;
     setanime([]);
     props.searchFun(val);
+    setTimeout(() => {
+      document.querySelector("#search").value="";
+    }, 1500);
   }
 
     return (
@@ -69,10 +77,10 @@ export default function Search(props) {
       </Slide>
       
     </div>
-    <div className='suggestion rounded'>
+    <div className='suggestion rounded '>
     {anime.length!==0 &&
-      anime.slice(0,6).map((val)=>{
-        return <div className='list p-1'  onClick={suggestionHandler}>
+      anime.slice(0,6).map((val,index)=>{
+        return <div className='list py-1 px-3' key={index}  onClick={suggestionHandler}>
           <li value={val}>{val}</li>
         </div>
       })

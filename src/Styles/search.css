@@ -7,8 +7,11 @@
 }
 
 .list {
-    border: 1px solid white;
-    color: violet
+   color: violet;
+   cursor: pointer;
+}
+.list:hover{
+    background-color: rgba(71, 60, 60, 0.675);
 }
 li{
  list-style: none;

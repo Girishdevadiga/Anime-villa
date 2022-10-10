@@ -72,6 +72,7 @@ export default function VidStream() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
                              title={"Anime"} allowFullScreen></iframe>
                         </div>
+                        
                 }
 
                 <div className="container">

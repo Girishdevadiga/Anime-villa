@@ -49,7 +49,7 @@ export default function Movies() {
     <div className='container'>
       <div className='row d-flex justify-content-between' ref={ref}>
         <div className="col-lg-6"> <Navbar /></div>
-        <div className="col-lg-6 d-flex align-items-center  "> <Search searchFun={searchHandler} /></div>
+        <div className="col-lg-6 my-auto  "> <Search searchFun={searchHandler} /></div>
       </div>
 
     {
