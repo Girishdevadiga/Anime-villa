@@ -32,7 +32,7 @@ export default function Search(props) {
 
   data.titleList.map((val)=>{
       if(val.toLowerCase().includes(str.toLowerCase())){
-        setanime((arr)=>[...arr,val])
+       setanime((arr)=>[...arr,val])
       }
     })
   //  console.log(anime);
