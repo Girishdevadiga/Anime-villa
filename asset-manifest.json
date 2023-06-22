@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Anime-villa/static/css/main.421e34c4.css",
-    "main.js": "/Anime-villa/static/js/main.1eb92c5a.js",
+    "main.js": "/Anime-villa/static/js/main.272be32b.js",
     "static/js/787.90d5882d.chunk.js": "/Anime-villa/static/js/787.90d5882d.chunk.js",
     "static/media/coding.png": "/Anime-villa/static/media/coding.6bba7f7e5a7812e9c567.png",
     "index.html": "/Anime-villa/index.html",
     "main.421e34c4.css.map": "/Anime-villa/static/css/main.421e34c4.css.map",
-    "main.1eb92c5a.js.map": "/Anime-villa/static/js/main.1eb92c5a.js.map",
+    "main.272be32b.js.map": "/Anime-villa/static/js/main.272be32b.js.map",
     "787.90d5882d.chunk.js.map": "/Anime-villa/static/js/787.90d5882d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.421e34c4.css",
-    "static/js/main.1eb92c5a.js"
+    "static/js/main.272be32b.js"
   ]
 }
